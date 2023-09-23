@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+:root{
+ --bg-color: #0F0F0F;
+ --boder-color: rgb(51,50,50);
+ --scroll-color: rgb(97,96,96);
+ --input-focus-color: #1C62B9;
+ --input-border-color: #969696;
+ --input-bg-color: #121212;
+ --input-color: #BBBBBB;
+ --buntton-bg-color: #323232;
+ --button-color: #999999;
+ --icons-hover-focus-color: rgba(236,231,231,0.2);
+ --icon-gertie-color: #FFFF;
+ --sidebar-hover-color: rgb(51, 50 ,50);
+ --sidebar-icon-color: rgb(139,139,139);
+ --grid-bg-color: #181818;
+ --grid-bg-after-color: rgba(14,12,14,0,6);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: var(--bg-color);
+    color: white;
+}
+
+body::-webkit-scrollbar{
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #262626;
+    border-radius: 4px;
+}
+
+
+button{
+    outline: none;
+    border: none;
+}
+
+a,
+a:focus,
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+d-none{
+    display: none;
+}
+
+.content{
+    position: relative;
+}
+
+
+/* HEADER */
+
+.header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 80px;
+    z-index: 2020;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 50px;
+    background-color: var(--bg-color);
+}
+
+
+.header > div:first-child{
+    padding: 0px 40px;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+}
+
+
+.header > div:first-child > a:nth-child(2){
+    display: flex;
+    align-items: center;
+}
+
+.header > div:first-child > a:nth-child(2) > i{
+    color: var(--icon-gertie-color);
+    font-size: 20px;
+}
+
+.header > div:nth-child(2){
+    width: 728px;
+    display: flex;
+    align-items: center;
+}
+
+.header > div:nth-child(2) form{
+    display: flex;
+    height: 30px;
+    width: 100%;
+    position: relative;
+}
+
+.header > div:nth-child(2) form > div:first-child{
+    width: 90%;
+}
+
+.header > div:nth-child(2) input {
+    outline: none;
+    border: 2px solid var(--input-border-color);
+    width: calc(100% - 50px); /* El ancho de la barra de búsqueda se ajusta al ancho de la página menos 50px */
+    height: 140%;
+    background-color: var(--input-bg-color);
+    padding-left: 15px;
+    color: var(--input-color);
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 20px;
+}
+
+.header > div:nth-child(2) button {
+    background-color: var(--input-bg-color);
+    border: none;
+    border-radius: 0 20px 20px 0;
+    padding: 0 0%;
+    height: 0%;
+    position: relative;
+    top: 12.5px;
+    left: -50px;
+    z-index: 1;
+}
+
+
+.header > div:nth-child(2) button:hover{
+    cursor: pointer;
+}
+
+.header > div:nth-child(2) input:focus{
+    border: 1px solid var(--input-color);
+}
+
+.header > .buttos{
+    display: flex;
+    align-items: center;
+}
+
+.header .buttons > a{
+    margin-left: 100px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header.buttons .button-perfil{
+    margin-left: 30px;
+}
+
+.header .buttons.button-perfil img{
+    padding-right: 100px;
+    width: 40px;
+    height: 40px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+.grid{
+    margin-top: 56px;
+    margin-left: 120px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 80px;
+    padding: 80px 100px 0 1px;
+}
+ .grid .grid-item{
+    margin: bottom 40px;
+ }
+
+
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 1330px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+    }
+}
+
+@media only screen and (max-width: 900px){
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+    }
+}
+
+@media only screen and (max-width: 800px){
+
+    .header > div:nth-child(2) button {
+        display: none;}
+    
+}
+
+@media only screen and (max-width: 700px){
+
+    .header > div:nth-child(2) input {
+        display: none;}
+    
+
+
+
+    .grid{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+
+    }
+}
+
+
+
