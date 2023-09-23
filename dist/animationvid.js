@@ -2,10 +2,9 @@ class AppAnimationVid extends HTMLElement {
     constructor() {
         super();
 
-        // Crea la sombra para el elemento personalizado
         const shadowRoot = this.attachShadow({ mode: 'open' });
 
-        // Define la plantilla para tu componente
+      
         const template = document.createElement('template');
         template.innerHTML = `
             <style>
@@ -105,22 +104,18 @@ class AppAnimationVid extends HTMLElement {
             </div>
         `;
 
-        // Clona la plantilla y adjunta el contenido a tu componente personalizado
         shadowRoot.appendChild(template.content.cloneNode(true));
     }
 }
 
-// Registra el Custom Element con el nombre "app-animationvid"
+
 customElements.define('app-animationvid', AppAnimationVid);
 
 
-  // animationvid.js
 export function reproducirVideo() {
-    // Lógica para reproducir un video
   }
   
   export function detenerVideo() {
-    // Lógica para detener un video
   }
   
   
